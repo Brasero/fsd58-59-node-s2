@@ -2,6 +2,7 @@ import express from "express";
 import path from "node:path";
 import fs from "node:fs";
 import {header} from "./utils/header.js";
+import routes from "./routes/index.js";
 
 const app = express();
 const port = process.env.PORT || 8000
@@ -11,6 +12,9 @@ const staticPath = path.join(__dirname, "public")
 const dataPath = path.join(__dirname, "data")
 
 app.use(express.static(staticPath));
+
+app.use(routes)
+//app.use("/", routes)
 
 app.get("/", (req, res) => {
 	let data;
