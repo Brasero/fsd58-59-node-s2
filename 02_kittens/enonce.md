@@ -2,7 +2,7 @@
 
 Vous allez construire une application web simple permettant de lister des photos de chatons.
 
-Créez un nouveau projet d'exercice `03_kittens`, qui reprend la base de l'exercice précédent (supprimez juste toutes les routes).
+Créez un nouveau projet d'exercice `02_kittens`, qui reprend la base de l'exercice précédent (supprimez juste toutes les routes).
 
 Les données des base vous sont fournies dans le dossier d'exercices :
 
