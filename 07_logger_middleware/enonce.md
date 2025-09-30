@@ -1,4 +1,4 @@
-## 01 Exercice : Logger
+## 07 Exercice : Logger
 
 En partant de la base d'application fournie,
 
