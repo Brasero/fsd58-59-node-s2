@@ -1,9 +1,14 @@
 import express from "express";
+import {counterMiddleware, loggerMiddleware} from "./middleware.js";
 
 const server = express();
 const port = 8000;
 
+
 server.use(express.urlencoded({extended: false}))
+server.use(counterMiddleware)
+server.use(loggerMiddleware)
+
 
 server.all("*path", (req, res) => {
   res.send(`
