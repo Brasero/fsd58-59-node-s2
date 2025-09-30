@@ -1,0 +1,27 @@
+.container {
+ display: flex;
+ gap: 15px;
+
+ img {
+  height: 50px;
+ }
+
+ ul {
+  display: flex;
+  gap: 5px;
+
+ li {
+  list-style: none;
+
+  a {
+   text-decoration: none;
+   color: black;
+   transition: all .3s ease;
+
+   &:hover {
+    color: violet;
+   }
+  }
+ }
+ }
+}
