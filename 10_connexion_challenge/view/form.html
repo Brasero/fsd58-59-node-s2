@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <title>Challenge Login</title>
+</head>
+<body class="container">
+  <main>
+    <form action="/login" method="post">
+      <div class="mb-3">
+        <label for="name" class="form-label">User name</label>
+        <input type="text" name="name" id="name" aria-describedby="loginHelp"  class="form-control">
+        <div id="loginHelp" class="form-text">Use your name to connect</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </main>
+</body>
+</html>
