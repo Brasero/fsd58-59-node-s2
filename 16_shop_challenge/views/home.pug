@@ -1,0 +1,13 @@
+extends layout/layout
+
+block content
+    div.card.p-4.mb-4
+        h2.card-title Nombre de produits en vente : #{productQty}
+    div.list-group
+        each prod in products
+          div.list-group-item.mb-3
+              div
+                  h2= prod.society
+                  small Quantité : #{prod.qty}
+                  div.d-flex
+                      a.m-1.list-group-item-action.nav-link.text-primary(href="/detail/"+prod._id) Voir plus >

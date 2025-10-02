@@ -1,0 +1,32 @@
+extends layout/layout
+
+mixin formItem(type, name, label, value)
+    div.mb-3
+        label.form-check-label(for=name)= label
+        input.form-control(type=type name=name id=name value=value)
+
+
+block content
+    div.card
+        h1.card-title.p-4= product ? "Modifier un produit":"Ajouter un produit"
+        div.card-body
+            form(action=product ? "/modify/"+product._id:"/add" method="post")
+                +formItem("text", "society", "Société", product ? product.society:"")
+                +formItem("number", "qty", "Quantité", product ? product.qty:"")
+                +formItem("number", "price", "Prix", product ? product.price:"")
+                +formItem("text", "year", "Année", product ? product.year:"")
+                +formItem("number", "h", "Hauteur", product ? product.size.h:"")
+                +formItem("number", "w", "Largeur", product ? product.size.w:"")
+                div.mb-3
+                    label.form-check-label(for="uom") Unité de mesure
+                    select(id="uom" name="uom").custom-select
+                        option(value="cm" selected=product?product.size.uom === "cm":false) cm
+                        option(value="inch" selected=product?product.size.uom === "inch":false) inch
+                div.mb-3
+                    label.form-check-label(for="sale") En vente ?
+                    input(type="checkbox" name="sale" id="sale" checked=product ? product.sale:false)
+                div.mb-3
+                    button.btn.btn-primary.btn-block(type="submit")= product ? "Modifier":"Ajouter"
+                if product
+                  div.mb-3
+                      a.btn.btn-danger.btn-block(href="/delete/"+product._id) Supprimer

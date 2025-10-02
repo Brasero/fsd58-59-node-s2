@@ -1,0 +1,23 @@
+extends layout/layout
+
+block content
+    a.nav-link.text-danger(href="/") Retour
+    div.card.w-75.border-0
+        div.card-body
+            h1.card-title= product.society
+        div.card-body.d-flex.justify-content-between
+            div.card-columns.d-flex.flex-column
+                div.card-text Quantité : #{product.qty}
+                div.card-text En vente : #{product.sale ? "Oui" : "Non"}
+                div.card-text Prix : #{product.price} $
+                div.card-text Année : #{product.year}
+            div.card-columns.d-flex.flex-column.list-group
+                div.list-group-item.card
+                    div.card-body
+                        h5.card-title Dimension
+                        div.card-text Hauteur : #{product.size.h} #{product.size.uom}
+                        div.card-text Largeur : #{product.size.w} #{product.size.uom}
+        if isConnected
+            div.card
+                div.card-body
+                    a.nav-link(href="/modify/" + product._id) Modifier
