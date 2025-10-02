@@ -1,0 +1,13 @@
+extends layout/layout
+
+block content
+    div.container-fluid
+        form(action="/login" method="post")
+            div.mb-3
+                label.form-label(for="name") Identifiant
+                input.form-control(type="text" required name="name" id='name')
+            div.mb-3
+                label.form-label(for="password") Password
+                input.form-control(type="password" required name="password" id="password")
+            div.mb-3
+                button.btn.btn-primary(type="submit") Se connecter

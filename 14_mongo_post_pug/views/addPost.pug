@@ -1,0 +1,12 @@
+extends layout/layout
+
+block content
+    div.container-fluid
+        form(method="post" action="/add")
+            div.mb-3
+                label.form-label Titre
+                input.form-control(type="text" required name="title")
+            div.mb-3
+                label.form-label Date
+                input.form-control(type="date" required name="date")
+            button.btn.btn-primary(type="submit") Ajouter
