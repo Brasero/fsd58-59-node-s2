@@ -1,0 +1,17 @@
+mixin navItem(path, label, className)
+    li.nav-item
+        a.nav-link(href=path class=className)= label
+
+nav.navbar.navbar-expand-lg.bg-body-tertiary
+    div.container-fluid
+        a.navbar-brand(href="/") Post Pug
+        button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation")
+            span.navbar-toggler-icon
+        div#navbarNav
+            ul.navbar-nav
+                +navItem("/", "Home")
+                if isConnected
+                    +navItem("/add", "Ajouter un post")
+                    +navItem("/logout", "Deconnexion", "text-danger")
+                else
+                    +navItem("/login", "Connexion")
