@@ -12,6 +12,8 @@
 
 > Une page "/login" permettant de se connecter (utilisé les identifiants de connexion du challenge connexion)
 
+> Une page "/logout" permettant de se déconnecter
+
 > Les pages de modification, ajout et suppression ne seront disponible que pour l'utilisateur connecté grâce à un middleware, les pages accueil et détail seront disponible déconnecté
 
 > Toutes les données (produit et user) seront enregistré via `mongoDB`
