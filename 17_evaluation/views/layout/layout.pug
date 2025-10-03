@@ -1,0 +1,24 @@
+doctype
+html
+    head
+        title= title || "Auth App"
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+    body
+        header
+            include ../partials/_nav.pug
+        if flashs
+            .container.mt-4
+                each flash in flashs
+                    div(class=`flash alert alert-${flash.type}`)= flash.message
+        main.container.mt-4
+            block content
+
+            script(type='text/javascript').
+                document.addEventListener('DOMContentLoaded', function() {
+                const flashMessages = document.querySelectorAll('.flash');
+                flashMessages.forEach(function(flash) {
+                    setTimeout(function() {
+                        flash.style.display = 'none';
+                    }, 5000);
+                    });
+                });

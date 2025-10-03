@@ -1,0 +1,17 @@
+extends layout/layout
+block content
+  h1 Home Page
+  p Bienvenue sur la page d'accueil de notre application d'authentification.
+  div.container-fluid
+    if user
+      p Vous êtes connécté en tant que #{user.firstName}.
+      if user.role === "admin"
+        a.btn.btn-primary(href='/admin') Dashboard Admin
+      else
+        a.btn.btn-primary(href='/dashboard') Dashboard
+      a.btn.btn-secondary(href='/logout') Déconnexion
+    else
+      p Vous n'êtes pas connecté.
+      div.d-flex(style='gap: 10px;')
+        a.btn.btn-primary(href='/login') Connexion
+        a.btn.btn-secondary(href='/register') Inscription

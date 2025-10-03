@@ -1,0 +1,19 @@
+extends layout/layout
+mixin formItem(name, label, type)
+    .mb-3
+        label.form-label(for=name)= label
+        input.form-control(type=type, id=name, name=name)
+        if errors && errors[name]
+            div.text-danger= errors[name]
+
+block content
+    h1 Inscription
+    if error
+        div.alert.alert-danger= error
+    form(method='POST', action='/register')
+        +formItem("firstName", "Prénom", "text")
+        +formItem("lastName", "Nom", "text")
+        +formItem("email", "Email", "email")
+        +formItem("password", "Mot de passe", "password")
+        +formItem("passwordConfirm", "Confirmer le mot de passe", "password")
+        button.btn.btn-success(type='submit') S'inscrire

@@ -1,0 +1,15 @@
+extends layout/layout
+mixin formItem(name, label, type)
+    .mb-3
+        label.form-label(for=name)= label
+        input.form-control(type=type, id=name, name=name)
+        if errors && errors[name]
+            div.text-danger= errors[name]
+block content
+    h1 Connexion
+    if error
+        div.alert.alert-danger= error
+    form(method='POST', action='/login')
+        +formItem("email", "Email", "email")
+        +formItem("password", "Mot de passe", "password")
+        button.btn.btn-primary(type='submit') Se connecter

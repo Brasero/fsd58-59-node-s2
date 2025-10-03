@@ -1,0 +1,6 @@
+extends layout/layout
+block content
+    h1 Tableau de bord Admin
+    if user
+        p Bonjour, #{user.firstName} #{user.lastName} (Admin) !
+        a.btn.btn-danger(href='/logout') Se déconnecter
